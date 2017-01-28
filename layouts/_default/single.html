@@ -1,0 +1,8 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  <p>{{ .Date }}</p>
+  {{ partial "sections/about.html" .Params.about }}
+  {{ partial "sections/pros.html" .Params.pros }}
+  {{ partial "sections/cons.html" .Params.cons }}
+  {{ partial "sections/background.html" .Params.background }}
+{{ end }}

@@ -1,0 +1,37 @@
+title: Issue
+tags:
+  - something
+cost:
+for:
+  - name:
+    title:
+    type:
+against:
+  - name:
+    title:
+    type:
+background:
+  - summary: Simple one-liner providing context
+    full: More informative, multi-line paragraph
+about:
+  - summary: Simple one-liner describing the actual issue, or thing
+    full: More informative, multi-line paragraph
+importance:
+  - summary: Why is this issue important, what's the implications, and significance - a sort of what's-at-stake-here.
+    full: More informative, multi-line paragraph
+pros:
+  - summary: Positive reasons to support this issue
+    full: More informative, multi-line paragraph
+cons:
+  - summary: Negative reasons against this issue
+    full: More informative, multi-line paragraph
+news:
+  - date:
+    type:
+    summary:
+    full:
+quotes:
+  - date:
+    name:
+    title:
+    text:

@@ -1,0 +1,22 @@
+{
+  "name": "we",
+  "version": "0.1.0",
+  "description": "The We Movement",
+  "main": "none",
+  "scripts": {
+    "test": "none"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alizain/we.git"
+  },
+  "author": "Alizain Feerasta",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/alizain/we/issues"
+  },
+  "homepage": "https://github.com/alizain/we#readme",
+  "devDependencies": {
+    "node-sass": "^4.4.0"
+  }
+}
