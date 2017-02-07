@@ -4,7 +4,8 @@
   "description": "The We Movement",
   "main": "none",
   "scripts": {
-    "test": "none"
+    "styles": "./node_modules/.bin/node-sass -r ./styles -o ./static/styles --include-path ./node_modules",
+    "styles:watch": "npm run styles -- -w"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,8 @@
   "homepage": "https://github.com/alizain/we#readme",
   "devDependencies": {
     "node-sass": "^4.4.0"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0-alpha.6"
   }
 }
