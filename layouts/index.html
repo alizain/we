@@ -1,0 +1,19 @@
+{{ define "main" }}
+	{{ range (where .Data.Pages "Section" "listings").GroupByParam "org" }}
+		<section class="container listing-section mb-6">
+			<h2 class="section-title mb-5">{{ .Key }}</h2>
+			<ul class="listing list-unstyled">
+				{{ range .Pages }}
+					<li class="listing-item mb-5">
+						<h4 class="item-title"><a href="{{ .Permalink }}"><strong>{{ .Params.position }}</strong> for <em>{{ .Params.program }}</em></a></h4>
+						<ul class="item-meta list-inline">
+							<li class="list-inline-item mr-2">{{ .Params.startdate }} to {{ .Params.enddate }}</li>
+							<li class="list-inline-item mr-2">{{ delimit .Params.commitment ", " }}</li>
+							<li class="list-inline-item mr-2">{{ .Params.location }}</li>
+						</ul>
+					</li>
+				{{ end }}
+			</ul>
+		</section>
+	{{ end }}
+{{ end }}

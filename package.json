@@ -1,26 +1,41 @@
 {
-  "name": "we",
-  "version": "0.1.0",
-  "description": "The We Movement",
-  "main": "none",
-  "scripts": {
-    "styles": "./node_modules/.bin/node-sass -r ./styles -o ./static/styles --include-path ./node_modules",
-    "styles:watch": "npm run styles -- -w"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alizain/we.git"
-  },
-  "author": "Alizain Feerasta",
-  "license": "GPL-3.0",
-  "bugs": {
-    "url": "https://github.com/alizain/we/issues"
-  },
-  "homepage": "https://github.com/alizain/we#readme",
-  "devDependencies": {
-    "node-sass": "^4.4.0"
-  },
-  "dependencies": {
-    "bootstrap": "4.0.0-alpha.6"
-  }
+	"name": "we",
+	"version": "0.1.0",
+	"description": "The We Movement",
+	"main": "none",
+	"scripts": {
+		"scss": "./node_modules/.bin/node-sass --include-path ./node_modules -r -o ./static/styles --source-map-embed ./assets/styles",
+		"styles": "npm run scss && ./node_modules/.bin/postcss -d ./static/styles -c ./postcss.json ./static/styles/*.css",
+		"images": "cp -r ./assets/images/ ./static/images",
+		"public": "cp -r ./assets/public/ ./static",
+		"static": "rm -r ./static && npm run styles && npm run images && npm run public",
+		"html": "./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --minify-js --minify-css --file-ext html --input-dir ./docs --output-dir ./docs",
+		"compile": "hugo && npm run html",
+		"publish": "npm run static && npm run compile"
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/alizain/we.git"
+	},
+	"author": "Alizain Feerasta",
+	"license": "GPL-3.0",
+	"bugs": {
+		"url": "https://github.com/alizain/we/issues"
+	},
+	"homepage": "https://github.com/alizain/we#readme",
+	"devDependencies": {
+		"autoprefixer": "^6.7.2",
+		"cheerio": "^0.22.0",
+		"chokidar": "^1.6.1",
+		"cssnano": "^3.10.0",
+		"html-minifier": "^3.3.1",
+		"image-type": "^2.1.0",
+		"node-sass": "^4.4.0",
+		"postcss": "^5.2.12",
+		"postcss-cli": "^2.6.0",
+		"request": "^2.76.0"
+	},
+	"dependencies": {
+		"bootstrap": "4.0.0-alpha.6"
+	}
 }
