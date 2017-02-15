@@ -1,8 +1,10 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  <p>{{ .Date }}</p>
-  {{ partial "sections/about.html" .Params.about }}
-  {{ partial "sections/pros.html" .Params.pros }}
-  {{ partial "sections/cons.html" .Params.cons }}
-  {{ partial "sections/background.html" .Params.background }}
+	<main class="container">
+		<h1>{{ .Title }}</h1>
+		<p>{{ .Date }}</p>
+		{{ partial "issues/section.html" ( dict "type" "About" "content" .Params.about ) }}
+		{{ partial "issues/section.html" ( dict "type" "Pros" "content" .Params.pros ) }}
+		{{ partial "issues/section.html" ( dict "type" "Cons" "content" .Params.cons ) }}
+		{{ partial "issues/section.html" ( dict "type" "Background" "content" .Params.background ) }}
+	</main>
 {{ end }}

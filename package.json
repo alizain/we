@@ -2,6 +2,7 @@
 	"name": "we",
 	"version": "0.1.0",
 	"description": "The We Movement",
+	"private": true,
 	"main": "none",
 	"scripts": {
 		"scss": "./node_modules/.bin/node-sass --include-path ./node_modules -r -o ./static/styles --source-map-embed ./assets/styles",
@@ -25,15 +26,11 @@
 	"homepage": "https://github.com/alizain/we#readme",
 	"devDependencies": {
 		"autoprefixer": "^6.7.2",
-		"cheerio": "^0.22.0",
-		"chokidar": "^1.6.1",
 		"cssnano": "^3.10.0",
 		"html-minifier": "^3.3.1",
-		"image-type": "^2.1.0",
 		"node-sass": "^4.4.0",
 		"postcss": "^5.2.12",
-		"postcss-cli": "^2.6.0",
-		"request": "^2.76.0"
+		"postcss-cli": "^2.6.0"
 	},
 	"dependencies": {
 		"bootstrap": "4.0.0-alpha.6"

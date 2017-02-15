@@ -1,0 +1,29 @@
+<section id="{{ lower .type }}">
+	<h3>{{ .type }}</h3>
+	<ul>
+		{{ range .content }}
+
+			{{ if eq .full nil }}
+
+				<li id={{ md5 .summary }} class="content-item">
+					<p>{{ .summary }}</p>
+				</li>
+
+			{{ else }}
+
+				<li id={{ md5 .summary }} class="content-item collapsible">
+					<p>
+						<a href="#{{ md5 .summary }}" data-toggle="collapse" class="collapsible-toggle">
+							{{ .summary }}
+						</a>
+					</p>
+					<div class="collapsible-content">
+						<p>{{ .full }}</p>
+					</div>
+				</li>
+
+			{{ end }}
+
+		{{ end }}
+	</ul>
+</section>
