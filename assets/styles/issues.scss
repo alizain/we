@@ -1,0 +1,60 @@
+@import "base";
+
+$item-spacer-x: get-spacers(2, 'x');
+$item-spacer-y: get-spacers(2, 'x');
+$item-spacer: get-spacers(3, 'x');
+
+@import "bootstrap/scss/card";
+
+main {
+
+	section {
+		margin-bottom: $main-spacer;
+	}
+
+	.title {
+
+		h1 {
+			margin-bottom: $item-spacer;
+		}
+
+		.meta {
+
+		}
+
+	}
+
+	.content {
+
+		.title {
+			margin-bottom: $item-spacer;
+		}
+
+		.item-list {
+			margin-bottom: $item-spacer;
+		}
+
+		.item {
+			margin-bottom: $item-spacer;
+		}
+
+		.item-summary,
+		.item-full {
+			& > *:last-child {
+				margin-bottom: 0;
+			}
+		}
+
+		.item-summary {
+			&.collapsible {
+				cursor: pointer;
+			}
+		}
+
+		.item-full {
+
+		}
+
+	}
+
+}

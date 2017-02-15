@@ -6,6 +6,7 @@
 	"main": "none",
 	"scripts": {
 		"scss": "./node_modules/.bin/node-sass --include-path ./node_modules -r -o ./static/styles --source-map-embed ./assets/styles",
+		"js": "./node_modules/.bin/webpack",
 		"styles": "npm run scss && ./node_modules/.bin/postcss -d ./static/styles -c ./postcss.json ./static/styles/*.css",
 		"images": "cp -r ./assets/images/ ./static/images",
 		"public": "cp -r ./assets/public/ ./static",
@@ -30,9 +31,13 @@
 		"html-minifier": "^3.3.1",
 		"node-sass": "^4.4.0",
 		"postcss": "^5.2.12",
-		"postcss-cli": "^2.6.0"
+		"postcss-cli": "^2.6.0",
+		"postcss-flexbugs-fixes": "^2.1.0",
+		"rollup": "^0.41.4",
+		"webpack": "^2.2.1"
 	},
 	"dependencies": {
-		"bootstrap": "4.0.0-alpha.6"
+		"bootstrap": "4.0.0-alpha.6",
+		"jquery": "^3.1.1"
 	}
 }

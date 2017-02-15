@@ -1,7 +1,6 @@
 ---
 title: Keystone-XL
 description:
-date: 2017-01-27
 tags:
   - environment
   - energy
@@ -12,8 +11,10 @@ background:
   - summary: Most of the Keystone Pipeline System already exists, and can carry upto 600,000 barrels of oil per day
 
 about:
-  - summary: The Keystone XL pipeline is the 4th phase of the Keystone Pipeline System
-    full: This is an entire paragraph on what it means to be the 4th phase of the keystone pipeline system
+  - summary: |
+      The Keystone XL pipeline is the 4th phase of the Keystone Pipeline System
+    full: |    
+      This is an entire paragraph on what it means to be the 4th phase of the keystone pipeline system. This has been modified today.
   - summary: Pipeline will run from Hardist, Alberta, Canada, through Baker, Montana, and connects with the rest of the system at Steele City, Nebraska
   - summary: Crude oil from the Williston Basin region in Montana and North Dakota will be added to the pipeline as well (from Baker, Montana)
 

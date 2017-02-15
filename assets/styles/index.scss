@@ -1,2 +1,38 @@
-@import "_base.scss";
-@import "bootstrap/scss/bootstrap.scss";
+@import "base";
+@import "bootstrap/scss/normalize";
+@import "bootstrap/scss/print";
+@import "bootstrap/scss/reboot";
+
+@import "bootstrap/scss/type";
+@import "bootstrap/scss/images";
+@import "bootstrap/scss/code";
+@import "bootstrap/scss/grid";
+@import "bootstrap/scss/tables";
+@import "bootstrap/scss/forms";
+@import "bootstrap/scss/buttons";
+
+@import "bootstrap/scss/transitions";
+@import "bootstrap/scss/nav";
+@import "bootstrap/scss/navbar";
+
+@import "bootstrap/scss/utilities";
+
+html {
+	font-size: 16px;
+}
+
+header {
+	padding: get-spacers(2, 'x');
+	margin-bottom: $main-spacer;
+	border-bottom: 1px solid $gray-lighter;
+
+	.navbar-brand {
+		padding: 0;
+	}
+}
+
+footer {
+	padding: get-spacers(2, 'x');
+	margin-top: get-spacers(4, 'x');
+	border-top: 1px solid $gray-lighter;
+}

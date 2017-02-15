@@ -1,7 +1,10 @@
 {
 	"local-plugins": true,
 	"use": [
-		"autoprefixer",
+		"postcss-flexbugs-fixes",
+		"autoprefixer"
+	],
+	"dontuseyet": [
 		"cssnano"
 	],
 	"autoprefixer": {}

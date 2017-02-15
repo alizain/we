@@ -1,3 +1,141 @@
-html {
-	font-size: 16px;
-}
+@import "bootstrap/scss/variables";
+@import "bootstrap/scss/mixins";
+
+// Functions
+
+@function get-spacers($number, $axis){
+  @return map-get(map-get($spacers, $number), $axis)
+};
+
+// Spacers
+
+$spacer: 1rem;
+$spacer-x: $spacer;
+$spacer-y: $spacer;
+$spacers: (
+	0: (
+		x: 0,
+		y: 0
+	),
+	1: (
+		x: ($spacer-x * .25),
+		y: ($spacer-y * .25)
+	),
+	2: (
+		x: ($spacer-x * .5),
+		y: ($spacer-y * .5)
+	),
+	3: (
+		x: ($spacer-x),
+		y: ($spacer-y)
+	),
+	4: (
+		x: ($spacer-x * 2),
+		y: ($spacer-y * 2)
+	),
+	5: (
+		x: ($spacer-x * 3),
+		y: ($spacer-y * 3)
+	),
+	6: (
+		x: ($spacer-x * 4),
+		y: ($spacer-y * 4)
+	),
+	7: (
+		x: ($spacer-x * 6),
+		y: ($spacer-y * 6)
+	),
+	8: (
+		x: ($spacer-x * 8),
+		y: ($spacer-y * 8)
+	)
+);
+
+$main-spacer: get-spacers(6, 'x');
+
+// Fonts
+
+$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-serif:      Georgia, "Times New Roman", Times, serif;
+$font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+$font-family-base:       $font-family-sans-serif;
+
+$font-size-base: 1rem; // http://www.modularscale.com/?16&px&1.25&web&text
+$font-size-lg:   1.25rem;
+$font-size-sm:   .875rem;
+$font-size-xs:   .75rem;
+
+$font-weight-light: 200;
+$font-weight-normal: 400;
+$font-weight-bold: 600;
+
+$font-weight-base: $font-weight-normal;
+$line-height-base: 1.5;
+
+$font-size-h1: 2.441rem;
+$font-size-h2: 1.953rem;
+$font-size-h3: 1.563rem;
+$font-size-h4: 1.25rem;
+$font-size-h5: 1rem;
+$font-size-h6: 1rem;
+
+$headings-margin-bottom: ($spacer / 2);
+$headings-font-family:   inherit;
+$headings-font-weight:   500;
+$headings-line-height:   1.1;
+$headings-color:         inherit;
+
+$display1-size: 6rem;
+$display2-size: 5.5rem;
+$display3-size: 4.5rem;
+$display4-size: 3.5rem;
+
+$display1-weight:     300;
+$display2-weight:     300;
+$display3-weight:     300;
+$display4-weight:     300;
+$display-line-height: $headings-line-height;
+
+$lead-font-size: 1.25rem;
+$lead-font-weight: 300;
+
+$small-font-size: 80%;
+
+$text-muted: $gray-light;
+
+$abbr-border-color: $gray-light;
+
+$blockquote-small-color: $gray-light;
+$blockquote-font-size: ($font-size-base * 1.25);
+$blockquote-border-color: $gray-lighter;
+$blockquote-border-width: .25rem;
+
+$hr-border-color: rgba($black,.1);
+$hr-border-width: $border-width;
+
+$mark-padding: .2em;
+
+$dt-font-weight: $font-weight-bold;
+
+$kbd-box-shadow: inset 0 -.1rem 0 rgba($black,.25);
+$nested-kbd-font-weight: $font-weight-bold;
+
+$list-inline-padding: 5px;
+
+// Components
+
+$line-height-lg:         (4 / 3);
+$line-height-sm:         1.5;
+
+$border-radius:          .25rem;
+$border-radius-lg:       .3rem;
+$border-radius-sm:       .2rem;
+
+$component-active-color: $white;
+$component-active-bg:    $brand-primary;
+
+$caret-width:            .3em;
+
+$transition-base:        all .2s ease-in-out;
+$transition-fade:        opacity .15s linear;
+$transition-collapse:    height .35s ease;

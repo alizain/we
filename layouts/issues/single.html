@@ -1,7 +1,19 @@
+{{ define "styles" }}
+	<link rel="stylesheet" href="/styles/issues.css">
+{{ end }}
+
+{{ define "scripts" }}
+	<script src="/scripts/issues.js"></script>
+{{ end }}
+
 {{ define "main" }}
 	<main class="container">
-		<h1>{{ .Title }}</h1>
-		<p>{{ .Date }}</p>
+		<section class="title">
+			<h1>{{ .Title }}</h1>
+			<div class="meta">
+				<p class="lastmod">Last Updated: {{ .Lastmod.Format "20060102-15:04:05.000" }}</p>
+			</div>
+		</section>
 		{{ partial "issues/section.html" ( dict "type" "About" "content" .Params.about ) }}
 		{{ partial "issues/section.html" ( dict "type" "Pros" "content" .Params.pros ) }}
 		{{ partial "issues/section.html" ( dict "type" "Cons" "content" .Params.cons ) }}
