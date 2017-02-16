@@ -17,6 +17,8 @@
 
 @import "bootstrap/scss/utilities";
 
+@import "convenience";
+
 html {
 	font-size: 16px;
 }
@@ -33,6 +35,6 @@ header {
 
 footer {
 	padding: get-spacers(2, 'x');
-	margin-top: get-spacers(4, 'x');
+	margin-top: $main-spacer;
 	border-top: 1px solid $gray-lighter;
 }

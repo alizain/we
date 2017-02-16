@@ -10,13 +10,28 @@
 	<main class="container">
 		<section class="title">
 			<h1>{{ .Title }}</h1>
-			<div class="meta">
-				<p class="lastmod">Last Updated: {{ .Lastmod.Format "20060102-15:04:05.000" }}</p>
-			</div>
+			<div class="lastmod">Last Updated: {{ .Lastmod.Format "20060102-15:04:05.000" }}</div>
+			<ul class="list-unstyled flex-line">
+				{{ range .Params.tags }}
+					<li class="tag">{{ . }}</li>
+				{{ end }}
+			</ul>
 		</section>
-		{{ partial "issues/section.html" ( dict "type" "About" "content" .Params.about ) }}
-		{{ partial "issues/section.html" ( dict "type" "Pros" "content" .Params.pros ) }}
-		{{ partial "issues/section.html" ( dict "type" "Cons" "content" .Params.cons ) }}
-		{{ partial "issues/section.html" ( dict "type" "Background" "content" .Params.background ) }}
+		<article>
+			<div class="pb-4">
+				{{ partial "issues/expander.html" ( dict "type" "About" "content" .Params.about ) }}
+			</div>
+			<div class="row by-on">
+				<div class="col col-md-12 col-lg-6 pr-lg-4 py-4 br-lg-on">
+					{{ partial "issues/expander.html" ( dict "type" "Pros" "content" .Params.pros ) }}
+				</div>
+				<div class="col col-md-12 col-lg-6 pl-lg-4 py-4 bt-on bt-lg-off">
+					{{ partial "issues/expander.html" ( dict "type" "Cons" "content" .Params.cons ) }}
+				</div>
+			</div>
+			<div class="pt-4">
+				{{ partial "issues/activity.html" ( dict "type" "Activity" "content" .Params.activity ) }}
+			</div>
+		</article>
 	</main>
 {{ end }}

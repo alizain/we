@@ -1,0 +1,34 @@
+<section class="activity last-child-mb-0" id="{{ lower .type }}">
+	<h4 class="title">{{ .type }}</h4>
+	<ul class="item-list list-unstyled last-child-mb-0">
+		{{ range .content }}
+
+			<li class="item">
+
+				{{ if eq .full nil }}
+
+					<div class="item-summary">
+						{{ partial "utils/markdownify.html" .summary }}
+					</div>
+
+				{{ else }}
+
+					<a data-target="#{{ md5 .summary }}" data-toggle="collapse">
+						<div class="item-summary collapsible">
+							{{ partial "utils/markdownify.html" .summary }}
+						</div>
+					</a>
+
+					<div id="{{ md5 .summary }}" class="collapse">
+						<div class="item-full">
+							{{ partial "utils/markdownify.html" .full }}
+						</div>
+					</div>
+
+				{{ end }}
+
+			</li>
+
+		{{ end }}
+	</ul>
+</section>

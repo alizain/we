@@ -1,60 +1,116 @@
 @import "base";
+@import "bootstrap/scss/card";
 
 $item-spacer-x: get-spacers(2, 'x');
 $item-spacer-y: get-spacers(2, 'x');
 $item-spacer: get-spacers(3, 'x');
 
-@import "bootstrap/scss/card";
+.title {
 
-main {
+	margin-bottom: get-spacers(5, 'x');
+
+	> * {
+		margin-bottom: $item-spacer-y;
+		&:last-child {
+			margin-bottom: 0;
+		}
+	}
+
+	h1 {
+
+	}
+
+	.lastmod {
+		font-size: $font-size-sm;
+	}
+
+	.tag {
+		font-size: $font-size-sm;
+		padding: $spacer * 0.25 $spacer * 0.5;
+		margin-left: $spacer * 0.5;
+		background: #EEE;
+		border-radius: $border-radius;
+		&:first-child {
+			margin-left: 0px;
+		}
+	}
+
+}
+
+aside {
+
+}
+
+article {
 
 	section {
-		margin-bottom: $main-spacer;
-	}
 
-	.title {
-
-		h1 {
-			margin-bottom: $item-spacer;
-		}
-
-		.meta {
-
-		}
-
-	}
-
-	.content {
+		// margin-bottom: get-spacers(5, 'x');
 
 		.title {
 			margin-bottom: $item-spacer;
 		}
 
-		.item-list {
-			margin-bottom: $item-spacer;
+	}
+
+}
+
+.expander {
+
+	.item-list {
+		margin-bottom: $item-spacer;
+	}
+
+	.item {
+		margin-bottom: $item-spacer;
+	}
+
+	.item-summary,
+	.item-full {
+		& > *:last-child {
+			margin-bottom: 0;
 		}
+	}
 
-		.item {
-			margin-bottom: $item-spacer;
+	.item-summary {
+		&.collapsible {
+			cursor: pointer;
 		}
+	}
 
-		.item-summary,
-		.item-full {
-			& > *:last-child {
-				margin-bottom: 0;
-			}
+	.item-full {
+		margin-top: $item-spacer;
+		margin-left: $item-spacer;
+	}
+
+}
+
+.activity {
+
+	.item-list {
+		margin-bottom: $item-spacer;
+	}
+
+	.item {
+		margin-bottom: $item-spacer;
+	}
+
+	.item-summary,
+	.item-full {
+		& > *:last-child {
+			margin-bottom: 0;
 		}
+	}
 
-		.item-summary {
-			&.collapsible {
-				cursor: pointer;
-			}
+	.item-summary {
+		&.collapsible {
+			cursor: pointer;
 		}
+	}
 
-		.item-full {
-
-		}
-
+	.item-full {
+		margin-top: $item-spacer;
+		margin-left: $item-spacer;
 	}
 
 }

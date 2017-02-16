@@ -1,0 +1,48 @@
+.flex-line {
+	display: flex;
+	flex-flow: row wrap;
+	justify-content: flex-start;
+	align-items: center;
+	align-content: center;
+}
+
+.last-child-mb-0 > *:last-child {
+	margin-bottom: 0 !important;
+}
+
+// Borders
+
+$border-gen-width: $border-width;
+$border-gen-color: $gray-lighter;
+
+@each $breakpoint in map-keys($grid-breakpoints) {
+	@include media-breakpoint-up($breakpoint) {
+		$infix: breakpoint-infix($breakpoint, $grid-breakpoints);
+		$prop: "border";
+
+		@each $side, $abbrev in (top: t, right: r, bottom: b, left: l) {
+			.b#{$abbrev}#{$infix}-on { #{$prop}-#{$side}:    $border-gen-width solid $border-gen-color; }
+		}
+		.bx#{$infix}-on {
+		  #{$prop}-right: $border-gen-width solid $border-gen-color;
+		  #{$prop}-left:  $border-gen-width solid $border-gen-color;
+		}
+		.by#{$infix}-on {
+		  #{$prop}-top:    $border-gen-width solid $border-gen-color;
+		  #{$prop}-bottom: $border-gen-width solid $border-gen-color;
+		}
+
+		@each $side, $abbrev in (top: t, right: r, bottom: b, left: l) {
+			.b#{$abbrev}#{$infix}-off { #{$prop}-#{$side}:    none; }
+		}
+		.bx#{$infix}-off {
+		  #{$prop}-right: none;
+		  #{$prop}-left:  none;
+		}
+		.by#{$infix}-off {
+		  #{$prop}-top:    none;
+		  #{$prop}-bottom: none;
+		}
+
+	}
+}
