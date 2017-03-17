@@ -7,30 +7,32 @@
 {{ end }}
 
 {{ define "main" }}
-	<main class="container">
+	<main>
 		<section class="title">
-			<h1>{{ .Title }}</h1>
-			<div class="lastmod">Last Updated: {{ .Lastmod.Format "20060102-15:04:05.000" }}</div>
-			<ul class="list-unstyled flex-line">
-				{{ range .Params.tags }}
-					<li class="tag">{{ . }}</li>
-				{{ end }}
-			</ul>
+			<div class="container">
+				<h1>{{ .Title }}</h1>
+				<div class="lastmod">Last Updated: {{ .Lastmod.Format "20060102-15:04:05.000" }}</div>
+				<ul class="list-unstyled flex-line">
+					{{ range .Params.tags }}
+						<li class="tag">{{ . }}</li>
+					{{ end }}
+				</ul>
+			</div>
 		</section>
 		<article>
-			<div class="pb-4">
-				{{ partial "issues/expander.html" ( dict "type" "About" "content" .Params.about ) }}
-			</div>
-			<div class="row by-on">
-				<div class="col col-md-12 col-lg-6 pr-lg-4 py-4 br-lg-on">
+			<div class="container">
+				<div class="my-6">
+					{{ partial "issues/expander.html" ( dict "type" "About" "content" .Params.about ) }}
+				</div>
+				<div class="my-6">
 					{{ partial "issues/expander.html" ( dict "type" "Pros" "content" .Params.pros ) }}
 				</div>
-				<div class="col col-md-12 col-lg-6 pl-lg-4 py-4 bt-on bt-lg-off">
+				<div class="my-6">
 					{{ partial "issues/expander.html" ( dict "type" "Cons" "content" .Params.cons ) }}
 				</div>
-			</div>
-			<div class="pt-4">
-				{{ partial "issues/activity.html" ( dict "type" "Activity" "content" .Params.activity ) }}
+				<!-- <div class="my-6">
+					{{ partial "issues/activity.html" ( dict "type" "Activity" "content" .Params.activity ) }}
+				</div> -->
 			</div>
 		</article>
 	</main>

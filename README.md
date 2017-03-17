@@ -1,3 +1,4 @@
 # we
 
-The We Movement
+ - Also show debunked pros and cons
+

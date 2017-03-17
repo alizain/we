@@ -48,10 +48,14 @@ $spacers: (
 	8: (
 		x: ($spacer-x * 8),
 		y: ($spacer-y * 8)
+	),
+	9: (
+		x: ($spacer-x * 10),
+		y: ($spacer-y * 10)
 	)
 );
 
-$main-spacer: get-spacers(6, 'x');
+$main-spacer: get-spacers(7, 'x');
 
 $border-width: 1px;
 
@@ -91,17 +95,17 @@ $grid-breakpoints: (
 // Grid containers
 
 $container-max-widths: (
-  sm: 540px,
-  md: 720px,
-  lg: 960px,
-  xl: 1140px
+  sm: 580px,
+  md: 680px,
+  lg: 780px,
+  xl: 880px
 );
 @include _assert-ascending($container-max-widths, "$container-max-widths");
 
 // Grid columns
 
 $grid-columns:               12;
-$grid-gutter-width-base:     32px;
+$grid-gutter-width-base:     0rem;
 $grid-gutter-widths: (
   xs: $grid-gutter-width-base,
   sm: $grid-gutter-width-base,
@@ -136,10 +140,10 @@ $font-size-h4: 1.25rem;
 $font-size-h5: 1rem;
 $font-size-h6: 1rem;
 
-$headings-margin-bottom: ($spacer / 2);
+$headings-margin-bottom: $spacer;
 $headings-font-family:   inherit;
 $headings-font-weight:   400;
-$headings-line-height:   1.2;
+$headings-line-height:   1.4;
 $headings-color:         inherit;
 
 $display1-size: 6rem;

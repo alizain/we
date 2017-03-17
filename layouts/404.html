@@ -1,27 +1,5 @@
 {{ define "main" }}
 
 	<h1>This page does not exist</h1>
-	<p>Here's some Calvin &amp; Hobbes instead!</p>
-
-	<noscript>
-	  <img src="{{ index .Site.Data.comics 20 }}" alt-text="Calvin &amp; Hobbes" />
-	</noscript>
-
-	<p id="ref" class="small">Want to see another one? Refresh the page! Or go straight to the <a href="http://www.gocomics.com/calvinandhobbes/">source</a> (the one that own the copyright).</p>
-
-	<script>
-		(function(window) {
-			var all = [
-				{{ range .Site.Data.comics }}
-					{{ . }},
-				{{ end }}
-			];
-			var src = all[Math.floor(Math.random() * all.length)];
-			var ref = document.getElementById("ref");
-			var img = document.createElement("img");
-			img.src = src;
-			ref.parentNode.insertBefore(img, ref)
-		})(window)
-	</script>
 
 {{ end }}

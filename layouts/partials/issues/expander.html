@@ -1,26 +1,29 @@
-<section class="expander last-child-mb-0" id="{{ lower .type }}">
-	<h4 class="title">{{ .type }}</h4>
-	<ul class="item-list list-unstyled last-child-mb-0">
+{{ $type := lower .type }}
+<section class="expander last-child-mb-0" id="{{ $type }}">
+	<h3 class="title mb-4">{{ .type }}</h3>
+	<ul class="item-list item-list-{{ $type }} list-unstyled last-child-mb-0">
 		{{ range .content }}
 
-			<li class="item item-{{ .type }}">
+			<li class="item mb-4 pl-4">
 
 				{{ if eq .full nil }}
 
-					<div class="item-summary">
+					<div class="item-summary last-child-mb-0">
+						<div class="item-diamond"></div>
 						{{ partial "utils/markdownify.html" .summary }}
 					</div>
 
 				{{ else }}
 
 					<a data-target="#{{ md5 .summary }}" data-toggle="collapse">
-						<div class="item-summary collapsible">
+						<div class="item-summary last-child-mb-0 collapsible">
+							<div class="item-chevron"></div>
 							{{ partial "utils/markdownify.html" .summary }}
 						</div>
 					</a>
 
 					<div id="{{ md5 .summary }}" class="collapse">
-						<div class="item-full">
+						<div class="item-full last-child-mb-0">
 							{{ partial "utils/markdownify.html" .full }}
 						</div>
 					</div>

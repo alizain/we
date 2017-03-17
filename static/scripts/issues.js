@@ -10863,10 +10863,21 @@ const Util = (($) => {
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
+/* WEBPACK VAR INJECTION */(function(jQuery) {Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_bootstrap_js_src_collapse__ = __webpack_require__(1);
 
 
+const $ = jQuery
+
+$('article').on('show.bs.collapse', function (ev) {
+  console.log(ev.target)
+})
+
+$('article').on('hide.bs.collapse', function () {
+  console.log('hiiiiiddding')
+})
+
+/* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))
 
 /***/ })
 /******/ ]);
