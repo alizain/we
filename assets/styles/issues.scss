@@ -18,12 +18,8 @@ section.title {
 	.tag {
 		font-size: $font-size-sm;
 		padding: $spacer * 0.25 $spacer * 0.5;
-		margin-left: $spacer * 0.5;
 		background: #EEE;
 		border-radius: $border-radius;
-		&:first-child {
-			margin-left: 0px;
-		}
 	}
 
 }
@@ -32,75 +28,83 @@ aside {
 
 }
 
-article {
+section.expander {
 
-	section {
+	.subtitle:after {
+		content: "";
+	}
 
-		.title {
-			// padding-left: 18px;
-			// position: relative;
-			// &:before {
-			// 	content: "";
-			//     position: absolute;
-			//     left: 0;
-			//     top: 0.4rem;
-			//     bottom: 0.4rem;
-			//     width: 6px;
-			//     background: #CCC;
-			// }
+	.item-list {
+
+		.item {
+			border: 1px solid $gray-lighterer;
+			border-radius: $border-radius;
+			overflow: hidden;
+			transition: border-color 0.35s ease;
+
+			.item-summary {
+				position: relative;
+				transition: background 0.35s ease;
+			}
+
+			.item-summary.item-summary-with-read-more {
+				cursor: pointer;
+				position: relative;
+				transition: all 0.35s ease;
+			}
+
+			.item-read-more {
+				color: $gray-lighter;
+				position: absolute;
+			    line-height: 1;
+			    height: 0.8rem;
+			    bottom: 1.2rem;
+			    z-index: -1;
+			    transition: all 0.111s ease-in-out;
+			}
+
+			&.contracted {
+				.item-summary.item-summary-with-read-more {
+					padding-bottom: 3rem !important;
+				}
+			}
+
+			&.expanded {
+				.item-read-more {
+					opacity: 0;
+					visibility: hidden;
+				}
+			}
+
+			.item-full {
+				border-top: 1px solid $gray-lightest;
+				transition: border-color 0.35s ease;
+			}
+
+			.item-meta {
+				border-top: 1px solid $gray-lightest;
+				line-height: 1;
+				color: $gray-lighter;
+			}
+
 		}
 
 	}
 
 }
 
-.expander {
+section.expander.color-scheme-default {
 
 	.item-list {
-	}
-
-	.item {
-	}
-
-	.item-summary,
-	.item-full {
-	}
-
-	.item-summary {
-		position: relative;
-		&.collapsible {
-			cursor: pointer;
+		.item.expanded {
+			border-color: hsl(36, 24%, 80%);
+			.item-summary {
+				background: hsl(36, 45%, 96%);
+			}
+			.item-meta {
+				border-top-color: hsl(36, 36%, 90%);
+			}
 		}
-	}
-
-	.item-full {
-
-	}
-
-	.item-diamond,
-	.item-chevron {
-		position: absolute;
-	    border-style: solid;
-	    height: 0.40em;
-	    width: 0.40rem;
-	}
-
-	.item-diamond {
-		border-width: 1px;
-		border-radius: 50%;
-		background: #000;
-	}
-
-	.item-chevron {
-		transition: transform 0.6s ease-in-out;
-		height: 0.50em;
-	    width: 0.50rem;
-		transform: rotate(-45deg);
-		border-width: 0 3px 3px 0px;
-	}
-
-	.item-chevron.chevron-open {
-		transform: rotate(45deg);
 	}
 
 }

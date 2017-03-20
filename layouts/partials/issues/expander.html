@@ -1,33 +1,49 @@
 {{ $type := lower .type }}
-<section class="expander last-child-mb-0" id="{{ $type }}">
-	<h3 class="title mb-4">{{ .type }}</h3>
+<section class="expander color-scheme-{{ .colorscheme }} last-child-mb-0" id="{{ $type }}">
+	<h3 class="subtitle mb-3">{{ .type }}</h3>
 	<ul class="item-list item-list-{{ $type }} list-unstyled last-child-mb-0">
 		{{ range .content }}
 
-			<li class="item mb-4 pl-4">
+			{{ $hasFullExplanation := eq (eq .full nil) false }}
 
-				{{ if eq .full nil }}
+			{{ if $hasFullExplanation }}
+				<li class="item mb-3 contracted">
+			{{ else }}
+				<li class="item mb-3">
+			{{ end }}
 
-					<div class="item-summary last-child-mb-0">
-						<div class="item-diamond"></div>
-						{{ partial "utils/markdownify.html" .summary }}
-					</div>
-
-				{{ else }}
-
+				{{ if $hasFullExplanation }}
 					<a data-target="#{{ md5 .summary }}" data-toggle="collapse">
-						<div class="item-summary last-child-mb-0 collapsible">
-							<div class="item-chevron"></div>
+						<div class="item-summary item-summary-with-read-more last-child-mb-0 p-3">
+							<div class="item-read-more meta-font-style">
+								<p class="m-0">Click to learn more...</p>
+							</div>
 							{{ partial "utils/markdownify.html" .summary }}
 						</div>
 					</a>
+				{{ else }}
+					<div class="item-summary last-child-mb-0 p-3">
+						{{ partial "utils/markdownify.html" .summary }}
+					</div>
+				{{ end }}
 
+				<!-- <div class="item-meta meta-font-style px-3 py-2">
+					<ul class="list-line">
+						<li class="list-inline-item">Share</li>
+						{{ if $hasFullExplanation }}
+							<li class="list-inline-item">
+								<a data-target="#{{ md5 .summary }}" data-toggle="collapse">Read more...</a>
+							</li>
+						{{ end }}
+					</ul>
+				</div> -->
+
+				{{ if $hasFullExplanation }}
 					<div id="{{ md5 .summary }}" class="collapse">
-						<div class="item-full last-child-mb-0">
+						<div class="item-full last-child-mb-0 p-3">
 							{{ partial "utils/markdownify.html" .full }}
 						</div>
 					</div>
-
 				{{ end }}
 
 			</li>

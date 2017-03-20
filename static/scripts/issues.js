@@ -10868,13 +10868,14 @@ const Util = (($) => {
 
 
 const $ = jQuery
+window.$ = jQuery
 
 $('article').on('show.bs.collapse', function (ev) {
-  console.log(ev.target)
+  $(ev.target).parents('.item').addClass('expanded').removeClass('contracted')
 })
 
-$('article').on('hide.bs.collapse', function () {
-  console.log('hiiiiiddding')
+$('article').on('hide.bs.collapse', function (ev) {
+  $(ev.target).parents('.item').removeClass('expanded').addClass('contracted')
 })
 
 /* WEBPACK VAR INJECTION */}.call(__webpack_exports__, __webpack_require__(0)))

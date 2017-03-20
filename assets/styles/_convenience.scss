@@ -10,6 +10,12 @@
 	margin-bottom: 0 !important;
 }
 
+.meta-font-style {
+	font-size: $font-size-sm;
+	font-family: $font-family-sans-serif;
+	font-weight: 400;
+}
+
 // Borders
 
 $border-gen-width: $border-width;

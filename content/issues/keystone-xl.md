@@ -1,9 +1,12 @@
 ---
 title: Keystone-XL
 tags:
-  - environment
-  - energy
-  - oil
+  - Environment
+  - Energy
+  - Oil
+
+facts:
+  cost: 70000000000
 
 context:
   - summary: The system carries crude oil from oil sands in Alberta, Canada to storage facilities in Oklahoma and to refineries in the Gulf Coast area.
@@ -14,9 +17,6 @@ about:
     full: something something something
   - summary: Pipeline will run from Hardist, Alberta, Canada, through Baker, Montana, and connects with the rest of the system at Steele City, Nebraska
   - summary: Crude oil from the Williston Basin region in Montana and North Dakota will be added to the pipeline as well (from Baker, Montana)
-
-facts:
-  cost: 70000000000
 
 pros:
   - summary: Crude oil from Canada will have to travel a shorter route

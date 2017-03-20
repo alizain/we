@@ -7,6 +7,27 @@
   @return map-get(map-get($spacers, $number), $axis)
 };
 
+@function gray($intensity, $alpha: 1) {
+  @return rgba($intensity, $intensity, $intensity, $alpha);
+}
+
+// Colors
+
+$gray-darker:               gray(14%);
+$gray-dark:                 gray(24%);
+$gray:                      gray(36%);
+$gray-light:                gray(50%);
+$gray-lighter:              gray(66%);
+$gray-lighterer:            gray(88%);
+$gray-lightest:          	gray(94%);
+
+// $brand-primary:             $blue !default;
+// $brand-success:             $green !default;
+// $brand-info:                $teal !default;
+// $brand-warning:             $orange !default;
+// $brand-danger:              $red !default;
+// $brand-inverse:             $gray-dark !default;
+
 // Spacers
 
 $spacer: 1rem;
@@ -116,22 +137,22 @@ $grid-gutter-widths: (
 
 // Fonts
 
-$font-family-sans-serif: -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-$font-family-serif:      Georgia, "Times New Roman", Times, serif;
+$font-family-sans-serif: "Fira Sans", -apple-system, system-ui, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+$font-family-serif:      "Merriweather", Georgia, "Times New Roman", Times, serif;
 $font-family-monospace:  Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-$font-family-base:       $font-family-sans-serif;
+$font-family-base:       $font-family-serif;
 
 $font-size-base: 1rem; // http://www.modularscale.com/?16&px&1.25&web&text
 $font-size-lg:   1.25rem;
 $font-size-sm:   .8rem;
 $font-size-xs:   .64rem;
 
-$font-weight-light: 200;
-$font-weight-normal: 400;
+$font-weight-light: 300;
+$font-weight-normal: 300;
 $font-weight-bold: 600;
 
 $font-weight-base: $font-weight-normal;
-$line-height-base: 1.6;
+$line-height-base: 1.8;
 
 $font-size-h1: 2.441rem;
 $font-size-h2: 1.953rem;
@@ -141,7 +162,7 @@ $font-size-h5: 1rem;
 $font-size-h6: 1rem;
 
 $headings-margin-bottom: $spacer;
-$headings-font-family:   inherit;
+$headings-font-family:   $font-family-sans-serif;
 $headings-font-weight:   400;
 $headings-line-height:   1.4;
 $headings-color:         inherit;
@@ -181,7 +202,7 @@ $dt-font-weight: $font-weight-bold;
 $kbd-box-shadow: inset 0 -.1rem 0 rgba($black,.25);
 $nested-kbd-font-weight: $font-weight-bold;
 
-$list-inline-padding: 5px;
+$list-inline-padding: 8px;
 
 // Components
 

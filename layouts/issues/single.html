@@ -2,19 +2,14 @@
 	<link rel="stylesheet" href="/styles/issues.css">
 {{ end }}
 
-{{ define "scripts" }}
-	<script src="/scripts/issues.js"></script>
-{{ end }}
-
 {{ define "main" }}
 	<main>
 		<section class="title">
 			<div class="container">
 				<h1>{{ .Title }}</h1>
-				<div class="lastmod">Last Updated: {{ .Lastmod.Format "20060102-15:04:05.000" }}</div>
-				<ul class="list-unstyled flex-line">
+				<ul class="list-inline meta-font-style">
 					{{ range .Params.tags }}
-						<li class="tag">{{ . }}</li>
+						<li class="list-inline-item tag">{{ . }}</li>
 					{{ end }}
 				</ul>
 			</div>
@@ -22,13 +17,13 @@
 		<article>
 			<div class="container">
 				<div class="my-6">
-					{{ partial "issues/expander.html" ( dict "type" "About" "content" .Params.about ) }}
+					{{ partial "issues/expander.html" ( dict "type" "About" "content" .Params.about "colorscheme" "default" ) }}
 				</div>
 				<div class="my-6">
-					{{ partial "issues/expander.html" ( dict "type" "Pros" "content" .Params.pros ) }}
+					{{ partial "issues/expander.html" ( dict "type" "Pros" "content" .Params.pros "colorscheme" "default" ) }}
 				</div>
 				<div class="my-6">
-					{{ partial "issues/expander.html" ( dict "type" "Cons" "content" .Params.cons ) }}
+					{{ partial "issues/expander.html" ( dict "type" "Cons" "content" .Params.cons "colorscheme" "default" ) }}
 				</div>
 				<!-- <div class="my-6">
 					{{ partial "issues/activity.html" ( dict "type" "Activity" "content" .Params.activity ) }}
@@ -36,4 +31,8 @@
 			</div>
 		</article>
 	</main>
+{{ end }}
+
+{{ define "scripts" }}
+	<script src="/scripts/issues.js"></script>
 {{ end }}
