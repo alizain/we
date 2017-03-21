@@ -10,10 +10,10 @@
 		"styles": "npm run scss && ./node_modules/.bin/postcss -d ./static/styles -c ./postcss.json ./static/styles/*.css",
 		"images": "cp -r ./assets/images/ ./static/images",
 		"public": "cp -r ./assets/public/ ./static",
-		"static": "rm -r ./static && npm run styles && npm run images && npm run public",
-		"html": "./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --minify-js --minify-css --file-ext html --input-dir ./docs --output-dir ./docs",
-		"compile": "hugo && npm run html",
-		"publish": "npm run static && npm run compile"
+		"static": "rm -rf ./static && npm run js && npm run styles && npm run images && npm run public",
+		"html": "./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --minify-js --minify-css --file-ext html --input-dir ./.dist --output-dir ./.dist",
+		"hugo": "hugo && npm run html",
+		"compile": "npm run static && npm run hugo"
 	},
 	"repository": {
 		"type": "git",

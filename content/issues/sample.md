@@ -1,5 +1,6 @@
 ---
 title: Sample Issue
+draft: true
 tags:
   - budget
   - education
@@ -13,7 +14,7 @@ about:
     summary: Donec lorem lectus, consequat vitae enim hendrerit, vestibulum pulvinar massa. Nunc placerat sagittis nisl eget volutpat.
   -
     summary:  Curabitur pulvinar suscipit lacus. Sed risus turpis, eleifend ut fermentum in, tempus ut mauris.
-    full: Praesent vitae eros vitae metus elementum molestie. Sed vitae tincidunt felis, ac auctor nisi. Fusce ac felis et enim euismod rhoncus a sit amet lorem. Suspendisse erat purus, sodales ut risus eget, venenatis tincidunt ligula. Pellentesque at commodo leo. Integer ut mauris in purus vestibulum eleifend eu eu est. Morbi placerat, massa sit amet fringilla vestibulum, metus sapien posuere magna, eget eleifend libero nunc vitae odio. Fusce mi lectus, pharetra eu lacinia ut, scelerisque a metus. Phasellus porttitor felis quis ligula blandit, vel placerat arcu vestibulum. Donec maximus hendrerit eros.
+    full: Praesent vitae eros vitae metus elementum molestie. Sed vitae tincidunt felis, ac auctor nisi. Fusce ac felis et enim euismod rhoncus a sit amet lorem. Suspendisse erat [purus](something), sodales ut risus eget, venenatis tincidunt ligula. Pellentesque at commodo leo. Integer ut mauris in purus vestibulum eleifend eu eu est. Morbi placerat, massa sit amet fringilla vestibulum, metus sapien posuere magna, eget eleifend libero nunc vitae odio. Fusce mi lectus, pharetra eu lacinia ut, scelerisque a metus. Phasellus porttitor felis quis ligula blandit, vel placerat arcu vestibulum. Donec maximus hendrerit eros.
   -
     summary: Mauris placerat dui velit, et dictum enim volutpat at. Duis consectetur odio eget nisi eleifend, nec volutpat lacus lacinia.
 

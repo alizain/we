@@ -13,7 +13,7 @@
 
 // Colors
 
-$gray-darker:               gray(14%);
+$gray-darker:               gray(18%);
 $gray-dark:                 gray(24%);
 $gray:                      gray(36%);
 $gray-light:                gray(50%);
@@ -21,12 +21,15 @@ $gray-lighter:              gray(66%);
 $gray-lighterer:            gray(88%);
 $gray-lightest:          	gray(94%);
 
-// $brand-primary:             $blue !default;
-// $brand-success:             $green !default;
-// $brand-info:                $teal !default;
-// $brand-warning:             $orange !default;
-// $brand-danger:              $red !default;
-// $brand-inverse:             $gray-dark !default;
+$brand-primary:           	hsl(34, 100%, 48%);
+$brand-secondary:        	hsl(200, 98%, 54%);
+$brand-complement-1:        hsl(252, 86%, 56%);
+$brand-complement-2:        hsl(148, 90%, 50%);
+// $brand-success:             $green;
+// $brand-info:                $teal;
+// $brand-warning:             $orange;
+// $brand-danger:              $red;
+// $brand-inverse:             $gray-dark;
 
 // Spacers
 
@@ -98,7 +101,7 @@ $inverse-color: $gray-lighter;
 
 $link-color:            $brand-primary;
 $link-decoration:       none;
-$link-hover-color:      darken($link-color, 15%);
+$link-hover-color:      brighten($link-color, 15%);
 $link-hover-decoration: underline;
 
 // Grid breakpoints

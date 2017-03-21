@@ -1,5 +1,4 @@
 @import "base";
-@import "bootstrap/scss/card";
 
 $item-spacer-x: get-spacers(2, 'x');
 $item-spacer-y: get-spacers(2, 'x');
@@ -97,12 +96,12 @@ section.expander.color-scheme-default {
 
 	.item-list {
 		.item.expanded {
-			border-color: hsl(36, 24%, 80%);
+			border-color: hsl(hue($brand-primary), 54%, 86%);
 			.item-summary {
-				background: hsl(36, 45%, 96%);
+				background: hsl(hue($brand-primary), 82%, 98%);
 			}
 			.item-meta {
-				border-top-color: hsl(36, 36%, 90%);
+				border-top-color: hsl(hue($brand-primary), 48%, 88%);
 			}
 		}
 	}

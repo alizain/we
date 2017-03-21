@@ -1,3 +1,4 @@
 languageCode = "en-us"
 title = "We"
 baseurl = "https://thewemovement.org/"
+publishDir = ".dist"
