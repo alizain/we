@@ -13,7 +13,8 @@
 		"static": "rm -rf ./static && npm run js && npm run styles && npm run images && npm run public",
 		"html": "./node_modules/.bin/html-minifier --collapse-whitespace --remove-comments --minify-js --minify-css --file-ext html --input-dir ./.dist --output-dir ./.dist",
 		"hugo": "hugo && npm run html",
-		"compile": "npm run static && npm run hugo"
+		"compile": "npm run static && npm run hugo",
+		"netlify": "npm run static && hugo_0.19 && npm run html"
 	},
 	"repository": {
 		"type": "git",
